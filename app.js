@@ -57,7 +57,7 @@ app.post('/api/users', jsonParser, async (req, res) => {
   await saver(user)
 })
 
-app.delete('/api/posts/:id', function(req, res){
+app.delete('/api/users/:id', function(req, res){
         
   const id = req.params.id;
   User.findByIdAndDelete(id, function(err, post){
@@ -68,7 +68,7 @@ app.delete('/api/posts/:id', function(req, res){
   })
 })
 
-app.put('/api/posts/:id', jsonParser, function(req, res){
+app.put('/api/users/:id', jsonParser, function(req, res){
         
   if(!req.body) return res.sendStatus(400)
   const id = req.params.id
